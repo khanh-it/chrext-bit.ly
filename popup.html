@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 	<html>
 	<head>
-		<script src="js/popup.js"></script>
-		<style>
-			button {height: 30px;width: 30px;outline: none;}
-		</style>
+		<!-- CSS -->
+		<link rel="stylesheet" href="vendor/bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="vendor/bootstrap-3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
-	<body style="min-width:640px;">
-		<button id="changeColor">Button in popup</button>
+	<body class="clearfix">
+		<div id="body" class="container">
+			<form id="form1st" class="">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">https://bit.ly/</span>
+						<input type="text" name="uri" class="form-control input-sm" value="" placeholder="..." autocomplete="on" />
+						<span class="input-group-addon" style="padding: 0 5px;">
+							<input type="button" id="btn-start" class="btn btn-xs btn-default btn-start" value="Start" />
+							<input type="button" id="btn-stop" class="btn btn-xs btn-warning btn-stop" value="Stop" />
+						</span>
+					</div>
+				</div>
+				<div class="form-group report-window-fg">
+					<p class="clearfix">
+						<a id="report-window-btn" href="#">Open report window...</a>
+					</p>
+					<p class="clearfix">
+						<a id="ads-window-btn" href="#">Open ads window...</a> 
+						(<span id="ads-cnt-badge">0</span> clicked)
+					</p>
+				</div>
+			</form>
+		</div>
+		<!-- JavaScript -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/popup.js"></script>
 	</body>
 </html>

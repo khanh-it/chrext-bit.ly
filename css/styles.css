@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#body {
+    padding: 10px;
+    min-height: 200px;
+}
+#form1st .report-window-fg {
+    display: none;
+}
+#form1st.active .report-window-fg {
+    display: block;
+}
+#form1st .btn-start {
+    display: inline;
+}
+#form1st .btn-stop {
+    display: none;
+}
+#form1st.active .btn-start {
+    display: none;
+}
+#form1st.active .btn-stop {
+    display: inline;
+}
+#form1st.active input {
+    background-color: silver;
+}

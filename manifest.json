@@ -3,28 +3,45 @@
 	"version": "1.0",
 	"description": "Build an Extension!",
 	"icons": {
-	  "16": "images/bitly_256.png",
-	  "32": "images/bitly_256.png",
-	  "48": "images/bitly_256.png",
-	  "128": "images/bitly_256.png",
-	  "256": "images/bitly_256.png"
+		"16": "images/bitly_256.png",
+		"32": "images/bitly_256.png",
+		"48": "images/bitly_256.png",
+		"128": "images/bitly_256.png",
+		"256": "images/bitly_256.png"
 	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.bitly.com/"
+			],
+			"css": [
+				"css/content_scripts/bit.ly/styles.css"
+			],
+			"js": [
+				"js/content_scripts/bit.ly/script.js"
+			]
+		}
+	],
 	"background": {
-		"scripts": ["js/bg.js"],
+		"scripts": [
+			"js/bg.js"
+		],
 		"persistent": false
-    },
+	},
 	"browser_action": {
-		"default_popup": "popup.html",
 		"default_icon": {
-		  "16": "images/bitly_256.png",
-		  "32": "images/bitly_256.png",
-		  "48": "images/bitly_256.png",
-		  "128": "images/bitly_256.png",
-		  "256": "images/bitly_256.png"
-		},
-		"default_title": "BitLy Ads",
-		"default_popup": "popup.html"
+			"16": "images/bitly_256.png",
+			"32": "images/bitly_256.png",
+			"48": "images/bitly_256.png",
+			"128": "images/bitly_256.png",
+			"256": "images/bitly_256.png"
+		}
 	},
 	"manifest_version": 2,
-	"permissions": ["storage"]
+	"permissions": [
+		"storage",
+		"cookies",
+		"*://*.bitly.com/",
+		"tabs"
+	]
 }
