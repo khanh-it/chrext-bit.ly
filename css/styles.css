@@ -2,9 +2,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
+body {
+    overflow: hidden;
+}
 #body {
-    padding: 10px;
-    min-height: 200px;
+    margin-top: -2px;
 }
 #form1st .report-window-fg {
     display: none;

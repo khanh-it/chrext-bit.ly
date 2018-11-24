@@ -1,0 +1,2 @@
+# Random change request' user agent info.
+@see https://stackoverflow.com/questions/15618923/in-google-chrome-what-is-the-extension-api-for-changing-the-useragent-and-devic

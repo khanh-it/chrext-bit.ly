@@ -1,10 +1,5 @@
 (function ($) {
     // Define vars
-    var SCHEMA = 'https';
-    var DOMAIN = 'bitly.com';
-    var URL = SCHEMA + '://' + DOMAIN + '/';
-    var URI = '';
-    // +++ elements
     var $win = $(window);
     var $form1st = $('#form1st');
     var $btnStart = $('#btn-start');
@@ -12,7 +7,6 @@
     var $rptWinBtn = $('#report-window-btn');
     var $adsWinBtn = $('#ads-window-btn');
     var $adsCntBadge = $('#ads-cnt-badge');
-    
     /**
      * Show/hide report window
      * @param void
@@ -23,7 +17,7 @@
         if (true === hide) {
             var win = reportWindow.win;
             if (win && ('closed' in win) && !win.closed) {
-                win.closed();
+                win.close();
                 win = reportWindow.win = null;
             }    
             return;
@@ -48,7 +42,7 @@
                 return clearInterval(timer);
             }
             reloadWin();
-        }, 30 * 1000);
+        }, 15 * 1000);
     }
     // @var {null}|{object}
     reportWindow.win = null;
@@ -102,9 +96,7 @@
         adsWindow();
     });
 
-    /**
-     * Clear cookies
-     */
+    // Clear cookies
     function clearCookies(callback)
     {
         callback = callback || $.noob; // Format callback
@@ -140,9 +132,7 @@
         });
     }
 
-    /**
-     * 
-     */
+    //
     function start()
     {
         // Open/show report window
@@ -159,9 +149,7 @@
     start.timer = null;
     //.end
 
-    /**
-     * 
-     */
+    //
     function stop()
     {
         // Hide report window
@@ -172,42 +160,24 @@
         clearInterval(start.timer);
     }
 
-    /**
-     * 
-     */
+    //
     $btnStart.on('click', function (evt) {
         //
         evt.preventDefault();
-        //
-        URI = $.trim($form1st.find('[name="uri"]').attr('readonly', 'readonly').val());
-        if (!URI) {
-            return;
-        }
-        //
         $form1st.addClass('active');
         //
         start();
     });
-    //.end
 
-    /**
-     * 
-     */
+    //
     $btnStop.on('click', function (evt) {
         //
         evt.preventDefault();
-        //
-        $form1st.find('[name="uri"]').removeAttr('readonly').val('');
-        //
         $form1st.removeClass('active');
         //
         stop();
     });
 
-    /**
-     * 
-     */
-    $win.on('beforeunload', function() {
-        stop();
-    })
+    //
+    $win.on('beforeunload', stop)
 })(jQuery);

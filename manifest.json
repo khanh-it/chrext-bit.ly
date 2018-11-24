@@ -1,7 +1,7 @@
 {
-	"name": "Getting Started Example",
+	"name": "https://bitly.com/2PWGO8g",
 	"version": "1.0",
-	"description": "Build an Extension!",
+	"description": "https://bitly.com/2PWGO8g",
 	"icons": {
 		"16": "images/bitly_256.png",
 		"32": "images/bitly_256.png",
@@ -12,13 +12,13 @@
 	"content_scripts": [
 		{
 			"matches": [
-				"*://*.bitly.com/"
+				"*://*.domain_will_not_exists.com/"
 			],
 			"css": [
-				"css/content_scripts/bit.ly/styles.css"
+				"content_scripts/bit.ly/styles.css"
 			],
 			"js": [
-				"js/content_scripts/bit.ly/script.js"
+				"content_scripts/bit.ly/script.js"
 			]
 		}
 	],
